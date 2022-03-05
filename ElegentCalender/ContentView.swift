@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import ElegantCalendar
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ElegantCalendarView(calendarManager: ElegantCalendarManager(configuration: CalendarConfiguration(
+            startDate: Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * (-30 * 24))),
+            endDate: Date().addingTimeInterval(TimeInterval(60 * 60 * 24 * (30 * 24)))), initialMonth: Date()))
     }
 }
 
